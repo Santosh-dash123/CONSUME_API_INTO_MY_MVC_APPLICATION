@@ -1,0 +1,40 @@
+﻿@model IEnumerable<API_CONSUME_PROJECT.Models.STUDENT>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3 class="text-danger text-center mt-5">LIST OF STUDENT</h3>
+<div class="d-flex justify-content-between">
+    <a class="btn btn-primary" href="/Home/AddStudent"><i class="fa-solid fa-plus"></i></a>
+    <a class="btn btn-primary" href="/Home/AddStudent"><i class="fa-solid fa-plus"></i></a>
+</div>
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th></th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>ADDRESS</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var count = 0;
+            foreach(var item in Model)
+            {
+                count += 1;
+                <tr>
+                    <td>@count</td>
+                    <td>@item.NAME</td>
+                    <td>@item.AGE</td>
+                    <td>@item.ADDRESS</td>
+                    <td>
+                        <a href="/Home/AddStudent?Id=@item.ID" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="/Home/DeleteStudent?Id=@item.ID" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

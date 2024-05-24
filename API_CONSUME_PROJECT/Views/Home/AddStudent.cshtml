@@ -1,0 +1,36 @@
+﻿@model API_CONSUME_PROJECT.Models.STUDENT
+
+<div class="container">
+<form class="form" method="post" action="/Home/AddStudent">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">NAME</label>
+                @Html.HiddenFor(x => x.ID,new {@id="ID"})
+                @Html.TextBoxFor(x => x.NAME,new {@class = "form-control",@id="NAME"})
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">AGE</label>
+                @Html.TextBoxFor(x => x.AGE, new { @class = "form-control",@id="AGE" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">ADDRESS</label>
+                @Html.TextBoxFor(x => x.ADDRESS, new { @class = "form-control", @id="ADDRESS"})
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-end align-items-end mt-3">
+            <div class="col-md-3 d-flex justify-content-end">
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">SUBMIT</button>
+                &nbsp;
+                <button type="reset" class="btn btn-danger">RESET</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
